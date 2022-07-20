@@ -1,4 +1,5 @@
 import React from 'react';
+import GlobalStyle from './global-style';
 import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { store } from './app/store';
@@ -10,6 +11,7 @@ const root = createRoot(container);
 
 root.render(
   <React.StrictMode>
+    <GlobalStyle />
     <Provider store={store}>
       <App />
     </Provider>
