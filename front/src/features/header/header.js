@@ -15,7 +15,7 @@ function Header() {
   return (
     <Container>
       <Left>
-        <IconButton identifier="menu" />
+        <IconButton icon="menu" />
         <LogoContainer href="#">
           <img src="logo.png" alt="Keep" />
           <span className='logoTitle'>Keep</span>
@@ -23,19 +23,19 @@ function Header() {
       </Left>
       <Center hasFocus={hasFocus}>
         <div className="inputContainer">
-          <IconButton identifier="search" />
+          <IconButton icon="search" />
           <input type="text" placeholder="Pesquisar" onFocus={() => setHasFocus(true)} onBlur={() => setHasFocus(false)} />
-          <IconButton identifier="close" />
+          <IconButton icon="close" />
         </div>
       </Center>
       <Right>
         <div className='appOptionsContainer'>
-          <IconButton identifier="refresh" />
-          <IconButton identifier="view_stream" />
-          <IconButton identifier="settings" />
+          <IconButton icon="refresh" />
+          <IconButton icon="view_stream" />
+          <IconButton icon="settings" className="material-symbols-outlined" />
         </div>
         <div className='userOptionsContainer'>
-          <IconButton identifier="apps" />
+          <IconButton icon="apps" />
           <UserPicture className="userPicture" src="https://lh3.googleusercontent.com/ogw/AOh-ky2tl0CIV_BHTg7udGckTAtv7DErivWGOMI1l-3VPw=s64-c-mo" />
         </div>
       </Right>

@@ -12,9 +12,17 @@ const Container = styled.span`
     }
 `;
 
+/* Valid classes:
+
+  material-symbols-rounded
+  material-symbols-outlined
+  material-symbols-sharp
+
+*/
+
 function IconButton(props) {
   return (
-    <Container className="material-icons">{ props.identifier }</Container>
+    <Container className="material-symbols-rounded">{ props.icon }</Container>
   );
 }
 
