@@ -22,7 +22,7 @@ const Container = styled.span`
 
 function IconButton(props) {
   return (
-    <Container className="material-symbols-rounded">{ props.icon }</Container>
+    <Container onClick={() => props.onClick()} className="material-symbols-rounded">{ props.icon }</Container>
   );
 }
 
