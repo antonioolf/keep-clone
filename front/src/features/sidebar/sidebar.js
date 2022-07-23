@@ -49,7 +49,7 @@ function Sidebar() {
             </SidebarItem>
             
             {markers.map((item, index) => (
-                <SidebarItem onClick={ () => alert('asdf') }>
+                <SidebarItem key={index} onClick={ () => alert('asdf') }>
                     <span className='material-symbols-rounded'>label</span>
                     <span>{ item.title }</span>
                 </SidebarItem>

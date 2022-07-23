@@ -48,6 +48,8 @@ const Center = styled.div`
     & > .inputContainer {
         display: flex;
         align-items: center;
+        transition: box-shadow 0.05s ease-in;
+
         ${ props => { if (props.hasFocus === false) {
             return `background-color: #f1f3f4;`
         } else {
@@ -64,6 +66,7 @@ const Center = styled.div`
 
     & input {
         background-color: transparent;
+        font-size: 16px;
     }
     
     /* Remove all borders from inpuot */
