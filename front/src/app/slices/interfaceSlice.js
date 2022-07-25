@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     activeMenu: false,
-    hasScroll: false,
+    hasScroll: false
 };
 
 export const interfaceSlice = createSlice({

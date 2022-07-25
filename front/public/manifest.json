@@ -1,6 +1,6 @@
 {
-  "short_name": "Keept",
-  "name": "Google Keep Clone",
+  "short_name": "Keep Clone",
+  "name": "Keep Clone",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
