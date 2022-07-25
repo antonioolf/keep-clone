@@ -1,7 +1,7 @@
 import { React, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import IconButton from '../../components/IconButton';
-import { useDispatch } from 'react-redux';
+
 import { toggle, selectHasScroll } from '../../app/slices/interfaceSlice';
 
 import { 
