@@ -1,7 +1,9 @@
 import { React, useState } from 'react';
+import { useSelector } from 'react-redux';
 import IconButton from '../../components/IconButton';
 import { useDispatch } from 'react-redux';
-import { toggle } from '../../app/slices/interfaceSlice';
+import { toggle, selectHasScroll } from '../../app/slices/interfaceSlice';
+
 import { 
   Container, 
   LogoContainer,
@@ -14,9 +16,10 @@ import {
 function Header() {
   const [hasFocus, setHasFocus] = useState(false);
   const dispatch = useDispatch();
+  const hasScroll = useSelector(selectHasScroll);
 
   return (
-    <Container>
+    <Container hasScroll={hasScroll}>
       <Left>
         <IconButton icon="menu" onClick={() => dispatch(toggle())} />
         <LogoContainer href="#">
@@ -39,7 +42,7 @@ function Header() {
         </div>
         <div className='userOptionsContainer'>
           <IconButton icon="apps" />
-          <UserPicture className="userPicture" src="https://lh3.googleusercontent.com/ogw/AOh-ky2tl0CIV_BHTg7udGckTAtv7DErivWGOMI1l-3VPw=s64-c-mo" />
+          <UserPicture className="userPicture" src="profile.jpeg" />
         </div>
       </Right>
     </Container>

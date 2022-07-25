@@ -1,6 +1,7 @@
 import { React, useState, useEffect } from 'react';
 import styled from 'styled-components';
-import { sidebarWidth } from '../../features/sidebar/style';
+import { sidebarWidth } from '../utils/sizes';
+import { NewNote } from './new-note';
 
 const noteColors = [
     'f28b82',
@@ -18,6 +19,10 @@ const noteColors = [
 ]
 
 const Container = styled.div`
+    padding-left: ${sidebarWidth};
+`;
+
+const NotesContainer = styled.div`
     width: calc(100% - ${sidebarWidth}px);
     display: grid;
     gap: 16px;
@@ -28,7 +33,7 @@ const Container = styled.div`
 
 const NoteStyle = styled.div`
     background-color: #${props => props.bgColor};
-    ${props => props.bgColor == 'ffffff' ? 'border: solid 1px #e0e0e0;' : ''};
+    ${props => props.bgColor === 'ffffff' ? 'border: solid 1px #e0e0e0;' : ''};
     border-radius: 8px;
     word-wrap: break-word;
     line-height: 1.25rem;
@@ -59,9 +64,10 @@ function Note() {
 function Notes() {
     return (
         <Container>
-            {
-                Array.from(Array(50).keys()).map((item, index) => <Note key={index} />)
-            }
+            <NewNote />
+            <NotesContainer>
+                { Array.from(Array(50).keys()).map((item, index) => <Note key={index} />) }
+            </NotesContainer>
         </Container>
     );
 }

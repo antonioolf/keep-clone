@@ -1,31 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import { selectActiveMenu } from '../../app/slices/interfaceSlice';
-import { Container } from './style';
-
-const SidebarItem = styled.div`
-    background-color: white;
-    min-height: 48px;
-    border-radius: 0 25px 25px 0;
-    display: flex;
-    align-items: center;
-    padding-left: 12px;
-    cursor: pointer;
-    color: #202124;
-
-    &.active {
-        background-color: #feefc3 !important;
-    }
-
-    &:hover {
-        background-color: #f1f3f4;
-    }
-
-    & > .material-symbols-rounded {
-        padding: 12px;
-    }
-`;
+import { Container, SidebarItem } from './style';
 
 function Sidebar() {
     const activeMenu = useSelector(selectActiveMenu);

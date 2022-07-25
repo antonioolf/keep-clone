@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { headerHeight } from '../utils/sizes';
 
 const LogoContainer = styled.a`
   text-decoration: none;
@@ -18,16 +19,21 @@ const LogoContainer = styled.a`
   }
 `;
 
-const Container = styled.div`
-    /* -webkit-box-shadow: 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%), 0px 2px 4px -1px rgb(0 0 0 / 20%);
-    box-shadow: 0px 4px 5px 0pxrgba(0,0,0,.14),0px 1px 10px 0px rgba(0,0,0,.12),0px 2px 4px -1px rgba(0,0,0,.2); */
-    -webkit-box-shadow: inset 0 -1px 0 0 #dadce0;
-    box-shadow: inset 0 -1px 0 0 #dadce0;
+const boxShadow = {
+    'withScroll': '0px 4px 5px 0px rgba(0,0,0,.14),0px 1px 10px 0px rgba(0,0,0,.12),0px 2px 4px -1px rgba(0,0,0,.2)',
+    'withoutScroll': 'inset 0 -1px 0 0 #dadce0;'
+}
 
+const Container = styled.div`
+    box-shadow: ${props => props.hasScroll ? boxShadow.withScroll : boxShadow.withoutScroll};
+    position: fixed;
+    background-color: white;
+    width: 100%;
     display: flex;
     align-items: center;
-    height: 64px;
+    height: ${headerHeight};
     padding: 0 12px;
+    z-index: 1;
 
     & > div {
         height: 100%;
@@ -55,7 +61,6 @@ const Center = styled.div`
         } else {
             return `
                 background-color: white;
-                -webkit-box-shadow: 0 1px 1px 0 rgb(65 69 73 / 30%), 0 1px 3px 1px rgb(65 69 73 / 15%);
                 box-shadow: 0 1px 1px 0 rgb(65 69 73 / 30%), 0 1px 3px 1px rgb(65 69 73 / 15%);
             `;
         }}};
