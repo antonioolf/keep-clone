@@ -10,7 +10,9 @@ export const notesSlice = createSlice({
     initialState,
     reducers: {
         add: (state, action) => {
-            saveNote(action.payload);
+            const { noteTitle, noteText } = action.payload
+            
+            saveNote(noteTitle, noteText);
             state.notesList = getNotes();
         },
         remove: (state, action) => {

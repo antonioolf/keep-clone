@@ -19,11 +19,19 @@ const NewNoteIdle = (props) => {
 
 const NewNoteEditing = (props) => {
     const [noteText, setNoteText] = useState('');
+    const [noteTitle, setNoteTitle] = useState('');
     const dispatch = useDispatch();
 
     return (
         <NewNoteEditingStyle>
-            <input className='title' type="text" placeholder="Título" />
+            <input 
+                className='title' 
+                type="text"
+                placeholder="Título"
+                onChange={(e) => {
+                    setNoteTitle(e.target.value)
+                }}  
+            />
             
             <textarea 
                 autoFocus={true}
@@ -36,20 +44,23 @@ const NewNoteEditing = (props) => {
 
             <BottomButtons>
                 <div>
-                    <IconButton icon="check_box" />
-                    <IconButton icon="check_box" />
-                    <IconButton icon="check_box" />
-                    <IconButton icon="check_box" />
-                    <IconButton icon="check_box" />
-                    <IconButton icon="check_box" />
-                    <IconButton icon="check_box" />
-                    <IconButton icon="check_box" />
+                    <IconButton icon="add_alert" />
+                    <IconButton icon="person_add" />
+                    <IconButton icon="palette" />
+                    <IconButton icon="image" />
+                    <IconButton icon="archive" />
+                    <IconButton icon="more_vert" />
+                    <IconButton icon="undo" />
+                    <IconButton icon="redo" />
                 </div>
 
                 <button 
                     className='closeButton' 
                     onClick={() => {
-                        dispatch(add(noteText));
+                        if (noteText.length > 0 || noteTitle.length > 0) {
+                            dispatch(add({ noteTitle, noteText }));    
+                        }
+                        setNoteText('');
                         props.setIsEditing(false)
                     }}
                 >

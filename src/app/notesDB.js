@@ -10,7 +10,7 @@ const saveNote = (noteTitle, noteText) => {
         text: noteText
     }
 
-    notesArray.push(noteObj);
+    notesArray.unshift(noteObj);
     localStorage.setItem('notesDB', JSON.stringify(notesArray));
 }
 

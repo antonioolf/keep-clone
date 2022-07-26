@@ -16,7 +16,8 @@ function Note(props) {
 
     return(
         <NoteStyle bgColor={noteColors[bgColorIndex]}>
-            {props.title}
+            <h4 className='title'>{props.title}</h4>
+            <div>{props.text}</div>
         </NoteStyle>
     )
 }
@@ -28,7 +29,7 @@ function Notes() {
         <Container>
             <NewNote />
             <NotesContainer>
-                { notes.map((noteObj, index) => <Note key={index} title={noteObj.title} />) }
+                { notes.map((noteObj, index) => <Note key={index} title={noteObj.title} text={noteObj.text} />) }
                 {/* { Array.from(Array(50).keys()).map((item, index) => <Note key={index} />) } */}
             </NotesContainer>
         </Container>
