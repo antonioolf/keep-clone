@@ -118,6 +118,14 @@ const EmptyNotesStyle = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    font-size: 1.375rem;
+    color: #80868b;
+    margin-top: 110px;
+
+    & .material-symbols-rounded {
+        font-size: 100px;
+        color: #d7d7d7;
+    }
 `;
 
 export {
