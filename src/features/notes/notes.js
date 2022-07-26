@@ -1,6 +1,6 @@
 import { React, useState, useEffect } from 'react';
 import { NewNote } from './newNote';
-import { NoteStyle, Container, NotesContainer } from './style';
+import { NoteStyle, Container, NotesContainer, EmptyNotesStyle } from './style';
 import { selectNotesList } from '../../app/slices/notesSlice';
 import { useSelector } from 'react-redux';
 import IconButton from '../../components/IconButton';
@@ -25,10 +25,10 @@ function Note(props) {
 
 const EmptyNotes = () => {
     return (
-        <div>
-            <IconButton icon="search" />
+        <EmptyNotesStyle>
+            <IconButton icon="lightbulb" />
             <div>As notas adicionadas aparecem aqui</div>
-        </div>
+        </EmptyNotesStyle>
     )
 }
 

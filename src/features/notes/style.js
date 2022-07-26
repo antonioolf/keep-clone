@@ -112,6 +112,14 @@ const NoteStyle = styled.div`
     }
 `;
 
+const EmptyNotesStyle = styled.div`
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+`;
+
 export {
     NewNoteContainer, 
     NewNoteIdleStyle,
@@ -119,5 +127,6 @@ export {
     BottomButtons,
     Container,
     NotesContainer,
-    NoteStyle
+    NoteStyle,
+    EmptyNotesStyle
 };
