@@ -3,6 +3,7 @@ import { NewNote } from './newNote';
 import { NoteStyle, Container, NotesContainer } from './style';
 import { selectNotesList } from '../../app/slices/notesSlice';
 import { useSelector } from 'react-redux';
+import IconButton from '../../components/IconButton';
 
 const noteColors = ['f28b82', 'fbbc04', 'fff475', 'ccff90', 'a7ffeb', 'cbf0f8',
     'aecbfa', 'd7aefb', 'fdcfe8', 'e6c9a8', 'e8eaed', 'ffffff']
@@ -22,15 +23,27 @@ function Note(props) {
     )
 }
 
+const EmptyNotes = () => {
+    return (
+        <div>
+            <IconButton icon="search" />
+            <div>As notas adicionadas aparecem aqui</div>
+        </div>
+    )
+}
+
 function Notes() {
     const notes = useSelector(selectNotesList);
+
+    const content = notes.length > 0 ? 
+        notes.map((note, index) => <Note key={index} title={note.title} text={note.text} />) : 
+        <EmptyNotes />;
 
     return (
         <Container>
             <NewNote />
             <NotesContainer>
-                { notes.map((noteObj, index) => <Note key={index} title={noteObj.title} text={noteObj.text} />) }
-                {/* { Array.from(Array(50).keys()).map((item, index) => <Note key={index} />) } */}
+                { content }
             </NotesContainer>
         </Container>
     );
