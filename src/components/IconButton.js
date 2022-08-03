@@ -12,14 +12,6 @@ const Container = styled.span`
     }
 `;
 
-/* Valid classes:
-
-  material-symbols-rounded
-  material-symbols-outlined
-  material-symbols-sharp
-
-*/
-
 function IconButton(props) {
   return (
     <Container onClick={() => props.onClick()} className="material-symbols-rounded">{ props.icon }</Container>

@@ -1,10 +1,12 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { selectActiveMenu } from '../../app/slices/interfaceSlice';
 import { Container, SidebarItem } from './style';
+import { useSizes } from '../utils/sizes';
+import { useSelector } from 'react-redux';
+import { selectOpenedMenu } from '../../app/slices/interfaceSlice';
 
 function Sidebar() {
-    const activeMenu = useSelector(selectActiveMenu);
+    const { sidebarWidth } = useSizes();
+    const openedMenu = useSelector(selectOpenedMenu);
 
     const markers = [
         { title: 'Compras', active: false },
@@ -18,16 +20,16 @@ function Sidebar() {
     ];
 
     return (
-        <Container>
-            <SidebarItem className="active" onClick={ () => alert('asdf') }>
+        <Container sidebarWidth={sidebarWidth}>
+            <SidebarItem className="active" openedMenu={openedMenu} sidebarWidth={sidebarWidth} onClick={ () => alert('asdf') }>
                 <span className='material-symbols-rounded'>lightbulb</span>
-                <span>Notas</span>
+                { openedMenu ? <span>Notas</span> : <></> }
             </SidebarItem>
             
             {markers.map((item, index) => (
-                <SidebarItem key={index} onClick={ () => alert('asdf') }>
+                <SidebarItem key={index} openedMenu={openedMenu} sidebarWidth={sidebarWidth} onClick={ () => alert('asdf') }>
                     <span className='material-symbols-rounded'>label</span>
-                    <span>{ item.title }</span>
+                    { openedMenu ? <span>{ item.title }</span> : <></> }
                 </SidebarItem>
             ))}
         </Container>

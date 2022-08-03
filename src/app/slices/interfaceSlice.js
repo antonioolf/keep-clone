@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    activeMenu: false,
+    openedMenu: false,
     hasScroll: false
 };
 
@@ -10,7 +10,7 @@ export const interfaceSlice = createSlice({
     initialState,
     reducers: {
         toggle: (state) => {
-            state.activeMenu = !state.activeMenu;
+            state.openedMenu = !state.openedMenu;
         },
         setHasScroll: (state, action) => {
             state.hasScroll = action.payload === 0 ? false : true;
@@ -20,7 +20,7 @@ export const interfaceSlice = createSlice({
 
 export const { toggle, setHasScroll } = interfaceSlice.actions;
 
-export const selectActiveMenu = (state) => state.interface.activeMenu;
+export const selectOpenedMenu = (state) => state.interface.openedMenu;
 export const selectHasScroll = (state) => state.interface.hasScroll;
 
 export default interfaceSlice.reducer;

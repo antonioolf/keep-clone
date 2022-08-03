@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { sidebarWidth } from '../utils/sizes';
 
 const NewNoteContainer = styled.div`
     display: flex;
@@ -80,13 +79,16 @@ const BottomButtons = styled.div`
 `;
 
 const Container = styled.div`
-    padding-left: ${sidebarWidth};
+    padding-left: ${props => props.sidebarWidth};
     flex: 1;
 `;
 
 const NotesContainer = styled.div`
-    width: calc(100% - ${sidebarWidth}px);
+    background-color: blue;
+    width: 100%;
+    margin: 0 auto;
     display: grid;
+    
     gap: 16px;
     padding: 16px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;

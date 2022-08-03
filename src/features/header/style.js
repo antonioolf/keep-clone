@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import { headerHeight } from '../utils/sizes';
 
 const LogoContainer = styled.a`
   text-decoration: none;
@@ -31,7 +30,7 @@ const Container = styled.div`
     width: 100%;
     display: flex;
     align-items: center;
-    height: ${headerHeight};
+    height: ${props => props.headerHeight};
     padding: 0 12px;
     z-index: 1;
 

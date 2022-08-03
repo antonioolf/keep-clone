@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import IconButton from '../../components/IconButton';
 
 import { toggle, selectHasScroll } from '../../app/slices/interfaceSlice';
+import { useSizes } from '../utils/sizes';
 
 import { 
   Container, 
@@ -17,9 +18,10 @@ function Header() {
   const [hasFocus, setHasFocus] = useState(false);
   const dispatch = useDispatch();
   const hasScroll = useSelector(selectHasScroll);
+  const { headerHeight } = useSizes();
 
   return (
-    <Container hasScroll={hasScroll}>
+    <Container hasScroll={hasScroll} headerHeight={headerHeight}>
       <Left>
         <IconButton icon="menu" onClick={() => dispatch(toggle())} />
         <LogoContainer href="#">

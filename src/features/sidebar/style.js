@@ -1,21 +1,41 @@
 import styled from 'styled-components';
-import { sidebarWidth } from '../utils/sizes';
+
+const transitionTime = '0.2s';
+const transition = `transition: width ${transitionTime} ease-in-out,` +
+    `border-radius ${transitionTime} ease-in-out, ` + 
+    `padding-left ${transitionTime} ease-in-out, ` +
+    `margin-left ${transitionTime} ease-in-out`;
 
 const Container = styled.div`
-    width: ${sidebarWidth};
+    width: ${props => props.sidebarWidth};
     height: 100%;
     padding-top: 8px;
     position: fixed;
     background-color: white;
+    ${transition};
 `;
 
 const SidebarItem = styled.div`
     background-color: white;
-    min-height: 48px;
-    border-radius: 0 25px 25px 0;
+    height: 48px;
+    ${(props) => {
+        if (props.openedMenu) {
+            return `
+                border-radius: 0 25px 25px 0;
+                padding-left: 14px;
+                width: ${props.sidebarWidth};
+            `;
+        } else {
+            return `
+                border-radius: 25px 25px 25px 25px;
+                margin-left: 14px;
+                width: 48px;
+            `;
+        }
+    }};
+    ${transition};
     display: flex;
     align-items: center;
-    padding-left: 12px;
     cursor: pointer;
     color: #202124;
 
@@ -32,4 +52,4 @@ const SidebarItem = styled.div`
     }
 `;
 
-export { Container, SidebarItem, sidebarWidth };
+export { Container, SidebarItem };
