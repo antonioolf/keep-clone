@@ -84,7 +84,6 @@ const Container = styled.div`
 `;
 
 const NotesContainer = styled.div`
-    background-color: blue;
     width: 100%;
     margin: 0 auto;
     display: grid;
