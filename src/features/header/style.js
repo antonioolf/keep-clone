@@ -126,6 +126,12 @@ const Right = styled.div`
       flex-grow: 1;
       justify-content: space-evenly;
     }
+
+    & .material-symbols-rounded {
+      @media(max-width: ${mediaQueryBreakLogoType}) {
+        padding: 0;
+      }
+    }
   }
 
 

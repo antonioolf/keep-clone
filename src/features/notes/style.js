@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { mediaQueryBreakLogoType } from '../utils/sizes';
 
 const NewNoteContainer = styled.div`
     display: flex;
@@ -13,21 +14,35 @@ const NewNoteContainer = styled.div`
 const NewNoteStyle = styled.div`
     box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302),0 2px 6px 2px rgba(60,64,67,0.149);
     background-color: white;
-    width: 600px;
+    width: 100%;
+    max-width: 600px;
     font-size: 14px;
     color: #626262;
     padding: 12px 16px;
     border-radius: 8px;
     display: flex;
+    margin-left: 15px;
+    margin-right: 15px;
 `;
 
 const NewNoteIdleStyle = styled(NewNoteStyle)`
     height: 46px;
+    @media(max-width: ${mediaQueryBreakLogoType}) {
+        height: auto;
+    }
+
     border: solid 1px #e0e0e0;
     font-weight: bold;
     align-items: center;
     justify-content: space-between;
     cursor: text;
+
+    & .material-symbols-rounded {
+      @media(max-width: ${mediaQueryBreakLogoType}) {
+        padding: 0;
+      }
+    }
+
 `;
 
 const NewNoteEditingStyle = styled(NewNoteStyle)`
@@ -121,11 +136,15 @@ const EmptyNotesStyle = styled.div`
     flex-direction: column;
     font-size: 1.375rem;
     color: #80868b;
-    margin-top: 110px;
+    margin-top: 20px;
 
     & .material-symbols-rounded {
         font-size: 100px;
         color: #d7d7d7;
+    }
+
+    & .message {
+        text-align: center;
     }
 `;
 

@@ -1,11 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { mediaQueryBreakLogoType } from '../features/utils/sizes';
 
 const Container = styled.span`
-  @media(max-width: ${mediaQueryBreakLogoType}) {
-    padding: 0;
-  }
   padding: 12px;
 
   border-radius: 50%;

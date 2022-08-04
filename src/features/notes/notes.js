@@ -27,7 +27,7 @@ const EmptyNotes = () => {
     return (
         <EmptyNotesStyle>
             <IconButton icon="lightbulb" />
-            <div>As notas adicionadas aparecem aqui</div>
+            <div className='message'>As notas adicionadas aparecem aqui</div>
         </EmptyNotesStyle>
     )
 }
