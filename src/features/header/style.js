@@ -46,8 +46,8 @@ const Left = styled.div`
 `;
 const Center = styled.div`
     display: flex;
-    justify-content: center;
-    padding: 8px 355px 8px 75px;
+    justify-content: flex-start;
+    padding: 8px 0 8px 75px;
     flex-grow: 1;
 
     & > .inputContainer {
@@ -80,7 +80,8 @@ const Center = styled.div`
     }
 
     & > .inputContainer, & input {
-        width: 100%;
+        max-width: 720px;
+        flex: 1%;
         height: 100%;
     }
 `;
