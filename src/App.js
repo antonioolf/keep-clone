@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import Header from './features/header/header';
 import Sidebar from './features/sidebar/sidebar';
 import Notes from './features/notes/notes';
-import { useSizes } from './features/utils/sizes';
+import { headerHeight } from './features/utils/sizes';
 
 const Container = styled.div`
     display: flex;
@@ -17,13 +17,12 @@ const Container = styled.div`
 const Main = styled.div`
     display: flex;
     flex: 1;
-    margin-top: ${(props) => props.headerHeight};
+    margin-top: ${headerHeight};
     overflow-y: scroll;
 `;
 
 function App() {
     const dispatch = useDispatch();
-    const { headerHeight } = useSizes();
 
     return (
         <Container>

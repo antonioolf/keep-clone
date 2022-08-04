@@ -8,14 +8,17 @@ const useSizes = () => {
     // por que vários componentes diferentes levam em consideração 
     // essa propriedade para se ajustar.
     const sidebarWidth = openedMenu ? '280px' : '80px';
-    
-    const headerHeight = '64px';
 
-    return {
-        sidebarWidth,
-        headerHeight
-    };
+    return { sidebarWidth };
 }
 
+const mediaQueryBreakSearch = '895px';
+const mediaQueryBreakLogoType = '470px';
+const headerHeight = '64px';
 
-export { useSizes };
+export { 
+    useSizes, 
+    headerHeight,
+    mediaQueryBreakSearch,
+    mediaQueryBreakLogoType
+ };
