@@ -42,9 +42,8 @@ function Header() {
           <IconButton icon="refresh" />
           <IconButton icon="view_stream" />
           <IconButton icon="settings" className="material-symbols-outlined" />
-        </div>
-        <div className='userOptionsContainer'>
-          <IconButton icon="apps" />
+
+          <IconButton className="iconButtonApps" icon="apps" />
           <UserPicture className="userPicture" src="profile.jpeg" />
         </div>
       </Right>

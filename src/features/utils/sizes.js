@@ -13,6 +13,7 @@ const useSizes = () => {
 }
 
 const mediaQueryBreakSearch = '895px';
+const mediaQueryBreakSidebar = '610px';
 const mediaQueryBreakLogoType = '470px';
 const headerHeight = '64px';
 
@@ -20,5 +21,6 @@ export {
     useSizes, 
     headerHeight,
     mediaQueryBreakSearch,
+    mediaQueryBreakSidebar,
     mediaQueryBreakLogoType
  };

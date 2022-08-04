@@ -1,7 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { mediaQueryBreakSidebar } from '../../features/utils/sizes';
+
+const initialOpened = window.innerWidth > parseInt(mediaQueryBreakSidebar.replace('px', ''));
 
 const initialState = {
-    openedMenu: true,
+    openedMenu: initialOpened,
     hasScroll: false
 };
 

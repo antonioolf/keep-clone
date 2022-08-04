@@ -117,8 +117,10 @@ const Right = styled.div`
     justify-content: space-between;
   }
 
-
   & > .appOptionsContainer {
+    display: flex;
+    align-items: center;
+
     @media(max-width: ${mediaQueryBreakLogoType}) {
       display: flex;
       flex-grow: 1;
@@ -126,23 +128,15 @@ const Right = styled.div`
     }
   }
 
-  & > .userOptionsContainer {
+
+  & .iconButtonApps {
     margin-left: 23px;
     @media(max-width: ${mediaQueryBreakSearch}) {
       margin-left: 0;
     }
-
-    @media(max-width: ${mediaQueryBreakLogoType}) {
-      display: flex;
-      flex-grow: 1;
-      justify-content: space-evenly;
-    }
-
-    display: flex;
-    align-items: center;
   }
 
-  & > .userOptionsContainer > .userPicture {
+  & .userPicture {
     border-radius: 50%;
   }
 
