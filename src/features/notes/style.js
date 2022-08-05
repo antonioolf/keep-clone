@@ -1,5 +1,5 @@
-import styled from 'styled-components';
-import { mediaQueryBreakLogoType, mediaQueryBreakSearch } from '../utils/sizes';
+import styled from "styled-components";
+import { mediaQueryBreakLogoType, mediaQueryBreakSearch } from "../utils/sizes";
 
 const NewNoteContainer = styled.div`
   display: flex;
@@ -12,7 +12,8 @@ const NewNoteContainer = styled.div`
 `;
 
 const NewNoteStyle = styled.div`
-  box-shadow: 0 1px 2px 0 rgba(60,64,67,0.302),0 2px 6px 2px rgba(60,64,67,0.149);
+  box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.302),
+    0 2px 6px 2px rgba(60, 64, 67, 0.149);
   background-color: white;
   width: 100%;
   max-width: 600px;
@@ -27,7 +28,7 @@ const NewNoteStyle = styled.div`
 
 const NewNoteIdleStyle = styled(NewNoteStyle)`
   height: 46px;
-  @media(max-width: ${mediaQueryBreakLogoType}) {
+  @media (max-width: ${mediaQueryBreakLogoType}) {
     height: auto;
   }
 
@@ -38,7 +39,7 @@ const NewNoteIdleStyle = styled(NewNoteStyle)`
   cursor: text;
 
   & .material-symbols-rounded {
-    @media(max-width: ${mediaQueryBreakLogoType}) {
+    @media (max-width: ${mediaQueryBreakLogoType}) {
       padding: 0;
     }
   }
@@ -56,12 +57,13 @@ const NewNoteEditingStyle = styled(NewNoteStyle)`
 
   & > .noteContent {
     min-height: 46px;
-    font-size: .875rem;
+    font-size: 0.875rem;
     border: none;
     resize: vertical;
   }
 
-  & > .noteContent:focus-visible, & > .title:focus-visible {
+  & > .noteContent:focus-visible,
+  & > .title:focus-visible {
     outline: none;
   }
 `;
@@ -71,7 +73,7 @@ const BottomButtons = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  @media(max-width: ${mediaQueryBreakSearch}) {
+  @media (max-width: ${mediaQueryBreakSearch}) {
     flex-direction: column;
   }
 
@@ -83,21 +85,21 @@ const BottomButtons = styled.div`
 
     background-color: white;
     border: none;
-    color: rgba(0,0,0,.87);
+    color: rgba(0, 0, 0, 0.87);
     font-weight: bold;
   }
 
   & .closeButton:hover {
-    background-color: rgba(95,99,104,0.039);
+    background-color: rgba(95, 99, 104, 0.039);
   }
 
   & .closeButton:active {
-    background-color: rgba(95,99,104,0.161) !important;
+    background-color: rgba(95, 99, 104, 0.161) !important;
   }
 `;
 
 const Container = styled.div`
-  padding-left: ${props => props.sidebarWidth};
+  padding-left: ${(props) => props.sidebarWidth};
   flex: 1;
 `;
 
@@ -105,16 +107,16 @@ const NotesContainer = styled.div`
   width: 100%;
   margin: 0 auto;
   display: grid;
-  
+
   gap: 16px;
   padding: 16px;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
-  @media(max-width: ${mediaQueryBreakSearch}) {
+  @media (max-width: ${mediaQueryBreakSearch}) {
     grid-template-columns: 1fr 1fr;
   }
 
-  @media(max-width: ${mediaQueryBreakLogoType}) {
+  @media (max-width: ${mediaQueryBreakLogoType}) {
     grid-template-columns: 1fr;
   }
 
@@ -122,8 +124,9 @@ const NotesContainer = styled.div`
 `;
 
 const NoteStyle = styled.div`
-  background-color: #${props => props.bgColor};
-  ${props => props.bgColor === 'ffffff' ? 'border: solid 1px #e0e0e0;' : ''};
+  background-color: #${(props) => props.bgColor};
+  ${(props) =>
+    props.bgColor === "ffffff" ? "border: solid 1px #e0e0e0;" : ""};
   border-radius: 8px;
   word-wrap: break-word;
   line-height: 1.25rem;
@@ -132,7 +135,8 @@ const NoteStyle = styled.div`
   padding: 12px 16px;
 
   &:hover {
-    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%),
+      0 1px 3px 1px rgb(60 64 67 / 15%);
   }
 
   & > .title {
@@ -161,12 +165,12 @@ const EmptyNotesStyle = styled.div`
 `;
 
 export {
-  NewNoteContainer, 
+  NewNoteContainer,
   NewNoteIdleStyle,
   NewNoteEditingStyle,
   BottomButtons,
   Container,
   NotesContainer,
   NoteStyle,
-  EmptyNotesStyle
+  EmptyNotesStyle,
 };

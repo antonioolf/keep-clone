@@ -1,9 +1,9 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 import {
   headerHeight,
   mediaQueryBreakSearch,
-  mediaQueryBreakLogoType
-} from '../utils/sizes';
+  mediaQueryBreakLogoType,
+} from "../utils/sizes";
 
 const LogoContainer = styled.a`
   text-decoration: none;
@@ -17,8 +17,7 @@ const LogoContainer = styled.a`
   }
 
   & > .logoTitle {
-
-    @media(max-width: ${mediaQueryBreakLogoType}) {
+    @media (max-width: ${mediaQueryBreakLogoType}) {
       display: none !important;
     }
 
@@ -30,12 +29,14 @@ const LogoContainer = styled.a`
 `;
 
 const boxShadow = {
-  'withScroll': '0px 4px 5px 0px rgba(0,0,0,.14),0px 1px 10px 0px rgba(0,0,0,.12),0px 2px 4px -1px rgba(0,0,0,.2)',
-  'withoutScroll': 'inset 0 -1px 0 0 #dadce0;'
-}
+  withScroll:
+    "0px 4px 5px 0px rgba(0,0,0,.14),0px 1px 10px 0px rgba(0,0,0,.12),0px 2px 4px -1px rgba(0,0,0,.2)",
+  withoutScroll: "inset 0 -1px 0 0 #dadce0;",
+};
 
 const Container = styled.div`
-  box-shadow: ${props => props.hasScroll ? boxShadow.withScroll : boxShadow.withoutScroll};
+  box-shadow: ${(props) =>
+    props.hasScroll ? boxShadow.withScroll : boxShadow.withoutScroll};
   position: fixed;
   background-color: white;
   width: 100%;
@@ -53,66 +54,73 @@ const Container = styled.div`
 `;
 
 const Left = styled.div`
-    padding-right: 12px;
-    @media(max-width: ${mediaQueryBreakLogoType}) {
-      padding-right: 0;
-    }
+  padding-right: 12px;
+  @media (max-width: ${mediaQueryBreakLogoType}) {
+    padding-right: 0;
+  }
 `;
 
 const Center = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  padding: 8px 0 8px 75px;
+  flex-grow: 1;
+
+  @media (max-width: ${mediaQueryBreakLogoType}) {
+    flex-grow: 0;
+  }
+
+  @media (max-width: ${mediaQueryBreakSearch}) {
+    padding: 0;
+  }
+
+  & > .inputContainer {
     display: flex;
-    justify-content: flex-start;
-    padding: 8px 0 8px 75px;
-    flex-grow: 1;
+    align-items: center;
+    border-radius: 8px;
+    transition: box-shadow 0.05s ease-in;
 
-    @media(max-width: ${mediaQueryBreakLogoType}) {
-      flex-grow: 0;
-    }
-
-    @media(max-width: ${mediaQueryBreakSearch}) {
-        padding: 0;
-    }
-
-    & > .inputContainer {
-        display: flex;
-        align-items: center;
-        border-radius: 8px;
-        transition: box-shadow 0.05s ease-in;
-
-        ${ props => { if (props.hasFocus === false) {
-            return `background-color: #f1f3f4;`
-        } else {
-            return `
+    ${(props) => {
+      if (props.hasFocus === false) {
+        return `background-color: #f1f3f4;`;
+      } else {
+        return `
                 background-color: white;
                 box-shadow: 0 1px 1px 0 rgb(65 69 73 / 30%), 0 1px 3px 1px rgb(65 69 73 / 15%);
             `;
-        }}};
+      }
+    }};
 
-        @media(max-width: ${mediaQueryBreakSearch}) {
-            display: none !important;
-        }
+    @media (max-width: ${mediaQueryBreakSearch}) {
+      display: none !important;
     }
+  }
 
-    & input {
-        background-color: transparent;
-        font-size: 16px;
-    }
-    
-    /* Remove all borders from inpuot */
-    & input, & input:focus, & input:hover, & input:active, & input:focus-visible {
-        border: none;
-        outline: none;
-    }
+  & input {
+    background-color: transparent;
+    font-size: 16px;
+  }
 
-    & > .inputContainer, & input {
-        max-width: 720px;
-        flex: 1%;
-        height: 100%;
-    }
+  /* Remove all borders from inpuot */
+  & input,
+  & input:focus,
+  & input:hover,
+  & input:active,
+  & input:focus-visible {
+    border: none;
+    outline: none;
+  }
+
+  & > .inputContainer,
+  & input {
+    max-width: 720px;
+    flex: 1%;
+    height: 100%;
+  }
 `;
 
 const Right = styled.div`
-  @media(max-width: ${mediaQueryBreakLogoType}) {
+  @media (max-width: ${mediaQueryBreakLogoType}) {
     flex-grow: 1;
     justify-content: space-between;
   }
@@ -121,23 +129,22 @@ const Right = styled.div`
     display: flex;
     align-items: center;
 
-    @media(max-width: ${mediaQueryBreakLogoType}) {
+    @media (max-width: ${mediaQueryBreakLogoType}) {
       display: flex;
       flex-grow: 1;
       justify-content: space-evenly;
     }
 
     & .material-symbols-rounded {
-      @media(max-width: ${mediaQueryBreakLogoType}) {
+      @media (max-width: ${mediaQueryBreakLogoType}) {
         padding: 0;
       }
     }
   }
 
-
   & .iconButtonApps {
     margin-left: 23px;
-    @media(max-width: ${mediaQueryBreakSearch}) {
+    @media (max-width: ${mediaQueryBreakSearch}) {
       margin-left: 0;
     }
   }
@@ -146,12 +153,11 @@ const Right = styled.div`
     border-radius: 50%;
   }
 
-  @media(min-width: ${mediaQueryBreakSearch}) {
+  @media (min-width: ${mediaQueryBreakSearch}) {
     & .miniSearch {
       display: none;
     }
   }
-  
 `;
 
 const UserPicture = styled.img`
@@ -160,11 +166,4 @@ const UserPicture = styled.img`
   padding: 4px 4px;
 `;
 
-export { 
-  LogoContainer,
-  Container,
-  Left,
-  Center,
-  Right,
-  UserPicture
-};
+export { LogoContainer, Container, Left, Center, Right, UserPicture };
