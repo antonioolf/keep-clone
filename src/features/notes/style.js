@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { mediaQueryBreakLogoType } from '../utils/sizes';
+import { mediaQueryBreakLogoType, mediaQueryBreakSearch } from '../utils/sizes';
 
 const NewNoteContainer = styled.div`
     display: flex;
@@ -72,6 +72,10 @@ const BottomButtons = styled.div`
     align-items: center;
     justify-content: space-between;
 
+    @media(max-width: ${mediaQueryBreakSearch}) {
+        flex-direction: column;
+    }
+
     & .closeButton {
         height: 36px;
         padding: 8px 24px;
@@ -106,6 +110,15 @@ const NotesContainer = styled.div`
     gap: 16px;
     padding: 16px;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+
+    @media(max-width: ${mediaQueryBreakSearch}) {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media(max-width: ${mediaQueryBreakLogoType}) {
+        grid-template-columns: 1fr;
+    }
+
     align-content: flex-start;
 `;
 
